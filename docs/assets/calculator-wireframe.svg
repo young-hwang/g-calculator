@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="400" height="700" viewBox="0 0 400 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- 배경 -->
+  <rect x="10" y="10" width="380" height="680" rx="20" ry="20" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+  
+  <!-- 제목 -->
+  <text x="200" y="40" font-family="Arial" font-size="20" text-anchor="middle" fill="#333">공학용 계산기</text>
+  
+  <!-- 모드 전환 버튼 -->
+  <rect x="30" y="60" width="160" height="30" rx="15" ry="15" fill="#e0e0e0" stroke="#333" stroke-width="1"/>
+  <text x="110" y="80" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">일반 모드</text>
+  
+  <rect x="210" y="60" width="160" height="30" rx="15" ry="15" fill="#fff" stroke="#333" stroke-width="1"/>
+  <text x="290" y="80" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">공학용 모드</text>
+  
+  <!-- 테마 전환 버튼 -->
+  <circle cx="350" cy="40" r="15" fill="#fff" stroke="#333" stroke-width="1"/>
+  <path d="M350 30 A10 10 0 0 1 350 50 A10 10 0 0 1 350 30" fill="#333"/>
+  
+  <!-- 디스플레이 영역 -->
+  <rect x="30" y="110" width="340" height="120" rx="10" ry="10" fill="#fff" stroke="#333" stroke-width="1"/>
+  
+  <!-- 표현식 입력 영역 -->
+  <rect x="40" y="120" width="320" height="50" rx="5" ry="5" fill="#f9f9f9" stroke="#ddd" stroke-width="1"/>
+  <text x="50" y="155" font-family="Courier New" font-size="18" fill="#666">(3 + 5) * 2 - 4 / 2</text>
+  
+  <!-- 결과 출력 영역 -->
+  <rect x="40" y="180" width="320" height="40" rx="5" ry="5" fill="#f9f9f9" stroke="#ddd" stroke-width="1"/>
+  <text x="350" y="210" font-family="Arial" font-size="24" text-anchor="end" fill="#333">14</text>
+  
+  <!-- 키패드 영역 -->
+  <rect x="30" y="250" width="340" height="250" rx="10" ry="10" fill="#f0f0f0" stroke="#333" stroke-width="1"/>
+  
+  <!-- 키패드 버튼 - 첫 번째 줄 -->
+  <rect x="40" y="260" width="60" height="40" rx="5" ry="5" fill="#ff9800" stroke="#e65100" stroke-width="1"/>
+  <text x="70" y="285" font-family="Arial" font-size="18" text-anchor="middle" fill="#fff">C</text>
+  
+  <rect x="110" y="260" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="140" y="285" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">+/-</text>
+  
+  <rect x="180" y="260" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="210" y="285" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">%</text>
+  
+  <rect x="250" y="260" width="60" height="40" rx="5" ry="5" fill="#2196f3" stroke="#0d47a1" stroke-width="1"/>
+  <text x="280" y="285" font-family="Arial" font-size="18" text-anchor="middle" fill="#fff">/</text>
+  
+  <rect x="320" y="260" width="40" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="340" y="285" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">←</text>
+  
+  <!-- 키패드 버튼 - 두 번째 줄 -->
+  <rect x="40" y="310" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="70" y="335" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">7</text>
+  
+  <rect x="110" y="310" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="140" y="335" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">8</text>
+  
+  <rect x="180" y="310" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="210" y="335" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">9</text>
+  
+  <rect x="250" y="310" width="60" height="40" rx="5" ry="5" fill="#2196f3" stroke="#0d47a1" stroke-width="1"/>
+  <text x="280" y="335" font-family="Arial" font-size="18" text-anchor="middle" fill="#fff">*</text>
+  
+  <rect x="320" y="310" width="40" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="340" y="335" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">(</text>
+  
+  <!-- 키패드 버튼 - 세 번째 줄 -->
+  <rect x="40" y="360" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="70" y="385" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">4</text>
+  
+  <rect x="110" y="360" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="140" y="385" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">5</text>
+  
+  <rect x="180" y="360" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="210" y="385" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">6</text>
+  
+  <rect x="250" y="360" width="60" height="40" rx="5" ry="5" fill="#2196f3" stroke="#0d47a1" stroke-width="1"/>
+  <text x="280" y="385" font-family="Arial" font-size="18" text-anchor="middle" fill="#fff">-</text>
+  
+  <rect x="320" y="360" width="40" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="340" y="385" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">)</text>
+  
+  <!-- 키패드 버튼 - 네 번째 줄 -->
+  <rect x="40" y="410" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="70" y="435" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">1</text>
+  
+  <rect x="110" y="410" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="140" y="435" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">2</text>
+  
+  <rect x="180" y="410" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="210" y="435" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">3</text>
+  
+  <rect x="250" y="410" width="60" height="40" rx="5" ry="5" fill="#2196f3" stroke="#0d47a1" stroke-width="1"/>
+  <text x="280" y="435" font-family="Arial" font-size="18" text-anchor="middle" fill="#fff">+</text>
+  
+  <rect x="320" y="410" width="40" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="340" y="435" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">^</text>
+  
+  <!-- 키패드 버튼 - 다섯 번째 줄 -->
+  <rect x="40" y="460" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="70" y="485" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">0</text>
+  
+  <rect x="110" y="460" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="140" y="485" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">.</text>
+  
+  <rect x="180" y="460" width="60" height="40" rx="5" ry="5" fill="#4caf50" stroke="#1b5e20" stroke-width="1"/>
+  <text x="210" y="485" font-family="Arial" font-size="18" text-anchor="middle" fill="#fff">=</text>
+  
+  <rect x="250" y="460" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="280" y="485" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">√</text>
+  
+  <rect x="320" y="460" width="40" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="340" y="485" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">π</text>
+  
+  <!-- 공학용 키패드 영역 -->
+  <rect x="30" y="520" width="340" height="70" rx="10" ry="10" fill="#e3f2fd" stroke="#333" stroke-width="1"/>
+  
+  <!-- 공학용 키패드 버튼 -->
+  <rect x="40" y="530" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="70" y="555" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">sin</text>
+  
+  <rect x="110" y="530" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="140" y="555" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">cos</text>
+  
+  <rect x="180" y="530" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="210" y="555" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">tan</text>
+  
+  <rect x="250" y="530" width="60" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="280" y="555" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">log</text>
+  
+  <rect x="320" y="530" width="40" height="40" rx="5" ry="5" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1"/>
+  <text x="340" y="555" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">ln</text>
+  
+  <!-- 히스토리 영역 -->
+  <rect x="30" y="610" width="340" height="70" rx="10" ry="10" fill="#fff" stroke="#333" stroke-width="1"/>
+  <text x="50" y="630" font-family="Arial" font-size="14" fill="#333">계산 기록:</text>
+  
+  <text x="50" y="650" font-family="Arial" font-size="12" fill="#666">3 + 5 = 8</text>
+  <text x="50" y="670" font-family="Arial" font-size="12" fill="#666">(3 + 5) * 2 - 4 / 2 = 14</text>
+</svg>
