@@ -72,7 +72,7 @@ const components = {
   },
 };
 
-export const theme = extendTheme({
+const theme = extendTheme({
   config,
   colors,
   components,
@@ -84,4 +84,6 @@ export const theme = extendTheme({
       },
     },
   },
-}); 
+});
+
+export default theme; 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Button } from '@chakra-ui/react';
 import type { ButtonProps } from '@chakra-ui/react';
 
@@ -9,18 +9,22 @@ interface CalculatorButtonProps extends ButtonProps {
   colorScheme?: string;
 }
 
-export const CalculatorButton: React.FC<CalculatorButtonProps> = ({
+export const CalculatorButton = React.memo<CalculatorButtonProps>(({
   label,
   onClick,
   variant = 'solid',
   colorScheme = 'brand',
   ...props
 }) => {
+  const handleClick = useCallback(() => {
+    onClick();
+  }, [onClick]);
+
   return (
     <Button
       variant={variant}
       colorScheme={colorScheme}
-      onClick={onClick}
+      onClick={handleClick}
       size="lg"
       width="100%"
       height="100%"
@@ -42,4 +46,6 @@ export const CalculatorButton: React.FC<CalculatorButtonProps> = ({
       {label}
     </Button>
   );
-}; 
+});
+
+CalculatorButton.displayName = 'CalculatorButton'; 

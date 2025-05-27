@@ -41,3 +41,5 @@ out
 .next
 .nuxt
 .cache
+
+*storybook.log

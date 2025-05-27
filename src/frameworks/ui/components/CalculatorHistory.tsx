@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
   Box,
   VStack,
@@ -15,13 +15,21 @@ interface CalculatorHistoryProps {
   onSelectHistoryItem: (result: CalculationResult) => void;
 }
 
-export const CalculatorHistory: React.FC<CalculatorHistoryProps> = ({
+export const CalculatorHistory = React.memo<CalculatorHistoryProps>(({
   history,
   onClearHistory,
   onSelectHistoryItem,
 }) => {
   const bgColor = useColorModeValue('gray.50', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
+
+  const handleSelectItem = useCallback((result: CalculationResult) => {
+    onSelectHistoryItem(result);
+  }, [onSelectHistoryItem]);
+
+  const handleClearHistory = useCallback(() => {
+    onClearHistory();
+  }, [onClearHistory]);
 
   if (history.length === 0) {
     return (
@@ -59,29 +67,35 @@ export const CalculatorHistory: React.FC<CalculatorHistoryProps> = ({
           size="sm"
           colorScheme="red"
           variant="ghost"
-          onClick={onClearHistory}
+          onClick={handleClearHistory}
         >
           Clear
         </Button>
       </Box>
       <Divider />
-      {history.map((result, index) => (
-        <Box
-          key={index}
-          p={2}
-          borderRadius="md"
-          _hover={{ bg: 'gray.100' }}
-          cursor="pointer"
-          onClick={() => onSelectHistoryItem(result)}
-        >
-          <Text fontSize="sm" color="gray.500" noOfLines={1}>
-            {result.expression}
-          </Text>
-          <Text fontSize="md" fontWeight="bold">
-            {result.value}
-          </Text>
-        </Box>
-      ))}
+      <VStack spacing={2} width="100%">
+        {history.map((result, index) => (
+          <Box
+            key={index}
+            p={2}
+            width="100%"
+            borderRadius="md"
+            bg="gray.50"
+            cursor="pointer"
+            _hover={{ bg: 'gray.100' }}
+            onClick={() => handleSelectItem(result)}
+          >
+            <Text fontSize="sm" color="gray.600" noOfLines={1}>
+              {result.expression}
+            </Text>
+            <Text fontSize="md" fontWeight="bold" color="gray.800">
+              {result.value}
+            </Text>
+          </Box>
+        ))}
+      </VStack>
     </VStack>
   );
-}; 
+});
+
+CalculatorHistory.displayName = 'CalculatorHistory'; 
