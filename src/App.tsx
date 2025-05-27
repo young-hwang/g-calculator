@@ -1,16 +1,17 @@
-import { Box, Container, Heading } from '@chakra-ui/react'
+import React from 'react';
+import { ChakraProvider } from '@chakra-ui/react';
+import { Calculator } from './frameworks/ui/components/Calculator';
+import { CalculatorProvider } from './frameworks/state/calculator/CalculatorContext';
+import theme from './theme';
 
 function App() {
   return (
-    <Container maxW="container.md" py={8}>
-      <Box textAlign="center">
-        <Heading as="h1" size="xl" mb={8}>
-          공학용 계산기
-        </Heading>
-        {/* 계산기 컴포넌트는 추후 구현 */}
-      </Box>
-    </Container>
-  )
+    <ChakraProvider theme={theme}>
+      <CalculatorProvider>
+        <Calculator />
+      </CalculatorProvider>
+    </ChakraProvider>
+  );
 }
 
-export default App
+export default App;

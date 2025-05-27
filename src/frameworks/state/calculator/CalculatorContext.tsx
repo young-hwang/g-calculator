@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import type { CalculatorState, CalculatorAction } from './types';
 import { calculatorReducer } from './reducer';
 import { LocalStorageAdapter } from '../../../adapters/storage/LocalStorageAdapter';
+import type { CalculationResult } from '../../../entities/CalculationResult';
 
 interface CalculatorContextType {
   state: CalculatorState;
@@ -14,6 +15,7 @@ interface CalculatorContextType {
   calculate: () => void;
   clearHistory: () => void;
   toggleEngineeringMode: () => void;
+  selectHistoryItem: (result: CalculationResult) => void;
 }
 
 const CalculatorContext = createContext<CalculatorContextType | null>(null);
@@ -61,6 +63,10 @@ export function CalculatorProvider({ children }: { children: ReactNode }) {
     dispatch({ type: 'TOGGLE_ENGINEERING_MODE' });
   };
 
+  const selectHistoryItem = (result: CalculationResult) => {
+    dispatch({ type: 'SET_RESULT', payload: result });
+  };
+
   // 결과가 변경될 때마다 히스토리에 추가하고 저장
   if (state.result) {
     storageAdapter.saveHistory([...state.history, state.result]);
@@ -77,7 +83,8 @@ export function CalculatorProvider({ children }: { children: ReactNode }) {
         deleteLast,
         calculate,
         clearHistory,
-        toggleEngineeringMode
+        toggleEngineeringMode,
+        selectHistoryItem
       }}
     >
       {children}
