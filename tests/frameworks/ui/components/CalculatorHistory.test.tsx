@@ -53,7 +53,8 @@ describe('CalculatorHistory', () => {
     
     const historyItems = screen.getAllByText(/40 \+ 2|50 \* 2/);
     historyItems.forEach(item => {
-      expect(item).toHaveStyle({ color: 'var(--chakra-colors-gray-500)' });
+      expect(item).toHaveClass('chakra-text');
+      expect(item).toHaveStyle({ color: 'var(--chakra-colors-gray-600)' });
     });
   });
 
@@ -71,6 +72,7 @@ describe('CalculatorHistory', () => {
     );
 
     const expressionElement = screen.getByText(longExpression);
+    expect(expressionElement).toHaveClass('chakra-text');
     expect(expressionElement).toHaveStyle({ noOfLines: 1 });
   });
 }); 

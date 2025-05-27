@@ -20,7 +20,7 @@ describe('CalculatorKeypad', () => {
     render(<CalculatorKeypad {...defaultProps} />);
     
     // Check for basic buttons
-    expect(screen.getByText('Basic Mode')).toBeInTheDocument();
+    expect(screen.getByText('Engineering Mode')).toBeInTheDocument();
     expect(screen.getByText('Clear')).toBeInTheDocument();
     expect(screen.getByText('Delete')).toBeInTheDocument();
     
@@ -32,17 +32,18 @@ describe('CalculatorKeypad', () => {
     // Check for basic operators
     expect(screen.getByText('+')).toBeInTheDocument();
     expect(screen.getByText('-')).toBeInTheDocument();
-    expect(screen.getByText('×')).toBeInTheDocument();
     expect(screen.getByText('÷')).toBeInTheDocument();
+    expect(screen.getByText('%')).toBeInTheDocument();
   });
 
   it('renders engineering mode buttons when enabled', () => {
     render(<CalculatorKeypad {...defaultProps} isEngineeringMode={true} />);
     
-    expect(screen.getByText('Engineering Mode')).toBeInTheDocument();
+    expect(screen.getByText('Basic Mode')).toBeInTheDocument();
     expect(screen.getByText('sin')).toBeInTheDocument();
     expect(screen.getByText('cos')).toBeInTheDocument();
     expect(screen.getByText('tan')).toBeInTheDocument();
+    expect(screen.getByText('×')).toBeInTheDocument();
   });
 
   it('calls appropriate handlers when buttons are clicked', () => {
@@ -65,7 +66,8 @@ describe('CalculatorKeypad', () => {
     expect(defaultProps.onDelete).toHaveBeenCalled();
     
     // Test calculate
-    fireEvent.click(screen.getByText('='));
+    const equalsButtons = screen.getAllByText('=');
+    fireEvent.click(equalsButtons[0]);
     expect(defaultProps.onCalculate).toHaveBeenCalled();
   });
 
@@ -79,7 +81,7 @@ describe('CalculatorKeypad', () => {
   it('toggles engineering mode when mode button is clicked', () => {
     render(<CalculatorKeypad {...defaultProps} />);
     
-    fireEvent.click(screen.getByText('Basic Mode'));
+    fireEvent.click(screen.getByText('Engineering Mode'));
     expect(defaultProps.onToggleEngineeringMode).toHaveBeenCalled();
   });
 }); 

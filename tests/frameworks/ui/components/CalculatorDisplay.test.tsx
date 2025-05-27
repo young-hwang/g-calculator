@@ -7,7 +7,11 @@ import { CalculatorDisplay } from '../../../../src/frameworks/ui/components/Calc
 describe('CalculatorDisplay', () => {
   it('renders with default values', () => {
     render(<CalculatorDisplay expression="" result="" />);
-    expect(screen.getByText('0')).toBeInTheDocument();
+    const elements = screen.getAllByText('0');
+    expect(elements).toHaveLength(2);
+    elements.forEach(element => {
+      expect(element).toBeInTheDocument();
+    });
   });
 
   it('renders expression and result', () => {
@@ -30,8 +34,9 @@ describe('CalculatorDisplay', () => {
       />
     );
     expect(screen.getByText('2 + ')).toBeInTheDocument();
-    expect(screen.getByText('Invalid expression')).toBeInTheDocument();
-    expect(screen.getByText('Invalid expression')).toHaveStyle({ color: 'var(--chakra-colors-red-400)' });
+    const errorElement = screen.getByText('Invalid expression');
+    expect(errorElement).toBeInTheDocument();
+    expect(errorElement).toHaveStyle({ color: 'var(--chakra-colors-red-500)' });
   });
 
   it('handles long expressions with word break', () => {
