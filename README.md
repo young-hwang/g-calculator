@@ -1,54 +1,77 @@
-# React + TypeScript + Vite
+# 공학용 계산기 웹앱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React와 TypeScript를 사용한 공학용 계산기 웹앱입니다.
 
-Currently, two official plugins are available:
+## 기능
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 기본 수학 연산 (덧셈, 뺄셈, 곱셈, 나눗셈, 제곱, 제곱근)
+- 공학용 함수 (삼각함수, 로그함수, 지수함수)
+- 괄호를 사용한 복잡한 수식 계산
+- 계산 기록 저장 및 조회
+- 일반/공학용 계산기 모드 전환
+- 다크/라이트 모드 지원
+- 반응형 디자인
 
-## Expanding the ESLint configuration
+## 기술 스택
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 18.2.0
+- TypeScript
+- Chakra UI
+- Math.js
+- Vite
+- Vitest
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 시작하기
+
+### 필수 조건
+
+- Node.js 18.0.0 이상
+- pnpm 8.0.0 이상
+
+### 설치
+
+```bash
+# 저장소 클론
+git clone https://github.com/yourusername/g-calculator.git
+cd g-calculator
+
+# 의존성 설치
+pnpm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 개발 서버 실행
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+pnpm dev
 ```
+
+### 테스트 실행
+
+```bash
+# 단위 테스트 실행
+pnpm test
+
+# 커버리지 리포트 생성
+pnpm test:coverage
+```
+
+### 빌드
+
+```bash
+pnpm build
+```
+
+## 프로젝트 구조
+
+```
+src/
+├── entities/           # 핵심 비즈니스 로직과 데이터 모델
+├── usecases/           # 애플리케이션 특화 비즈니스 규칙
+├── adapters/           # 외부 라이브러리와의 인터페이스
+├── frameworks/         # UI 컴포넌트, 상태 관리 등
+└── main.tsx           # 앱 진입점
+```
+
+## 라이선스
+
+MIT
